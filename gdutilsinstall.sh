@@ -110,7 +110,9 @@ for ((aloop = 0; aloop < ${#insofts[@]}; aloop++)); do
     fi
 done
 
+clear
 echo
+echo -e "\033[1;32m===== <<升级系统/更新软件/安装工具/安装依赖>> [已完成]=====\033[0m"
 echo -e "\033[1;32m===== <<安装gdutils依赖-nodejs和npm/安装配置gdutils>> =====\033[0m"
 echo
 $cmd_install install $cmd_install_rely -y
@@ -121,7 +123,10 @@ git clone https://github.com/iwestlin/gd-utils && cd gd-utils
 npm config set unsafe-perm=true
 npm i
 
+clear
 echo
+echo -e "\033[1;32m===== <<升级系统/更新软件/安装工具/安装依赖>> [已完成]=====\033[0m"
+echo -e "\033[1;32m===== <<安装gdutils依赖-nodejs和npm/安装配置gdutils>> [已完成]=====\033[0m"
 echo -e "\033[1;32m★★★ 恭喜您!gdutils统计转存系统已经正确安装完成，请上传sa到“./gd-utils/sa/”目录下完成最后的配置 ★★★\033[0m"
 echo
 
@@ -179,6 +184,11 @@ cd ~ &&
     sed -i "s/DEFAULT_TARGET = ''/DEFAULT_TARGET = '$YOUR_GOOGLE_TEAM_DRIVE_ID'/g" ./gd-utils/config.js
 echo -e "\033[1;32m----------------------------------------------------------\033[0m"
 
+clear
+echo
+echo -e "\033[1;32m===== <<升级系统/更新软件/安装工具/安装依赖>> [已完成]=====\033[0m"
+echo -e "\033[1;32m===== <<安装gdutils依赖-nodejs和npm/安装配置gdutils>> [已完成]=====\033[0m"
+echo -e "\033[1;32m  ===== <<开始部署gdutils查询转存TG机器人>> [已完成]=====  \033[0m"
 echo -e "\033[1;32m“进程守护程序pm2”开始安装......\033[0m"
 cd /root/gd-utils &&
     npm i pm2 -g && pm2 l
@@ -186,6 +196,12 @@ echo -e "\033[1;32m启动守护进程......\033[0m"
 pm2 start server.js
 echo -e "\033[1;32m----------------------------------------------------------\033[0m"
 
+clear
+echo
+echo -e "\033[1;32m===== <<升级系统/更新软件/安装工具/安装依赖>> [已完成]=====\033[0m"
+echo -e "\033[1;32m===== <<安装gdutils依赖-nodejs和npm/安装配置gdutils>> [已完成]=====\033[0m"
+echo -e "\033[1;32m  ===== <<开始部署gdutils查询转存TG机器人>> [已完成]=====  \033[0m"
+echo -e "\033[1;32m“进程守护程序pm2”>> [已完成]\033[0m"
 echo -e "\033[1;32m“nginx”开始安装......\033[0m"
 cd ~ &&
     $cmd_install install nginx -y
@@ -211,6 +227,13 @@ ls &&
     netstat -tulpen
 echo -e "\033[1;32m----------------------------------------------------------\033[0m"
 
+clear
+echo
+echo -e "\033[1;32m===== <<升级系统/更新软件/安装工具/安装依赖>> [已完成]=====\033[0m"
+echo -e "\033[1;32m===== <<安装gdutils依赖-nodejs和npm/安装配置gdutils>> [已完成]=====\033[0m"
+echo -e "\033[1;32m  ===== <<开始部署gdutils查询转存TG机器人>> [已完成]=====  \033[0m"
+echo -e "\033[1;32m“进程守护程序pm2”>> [已完成]\033[0m"
+echo -e "\033[1;32m“nginx”>> [已完成]\033[0m"
 echo -e "\033[1;32m“检查网站是否部署成功”......\033[0m"
 curl $YOUR_DOMAIN_NAME/api/gdurl/count\?fid=124pjM5LggSuwI1n40bcD5tQ13wS0M6wg
 echo
