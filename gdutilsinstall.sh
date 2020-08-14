@@ -153,6 +153,24 @@ read -p """请输入使用机器人的telegram账号NAME(获取NAME机器人@use
 #     Your Telegram NAME =>:""" YOUR_TELEGRAM_NAME
 # done
 
+read -p """请输入使用机器人的Google账号CLIENT ID(OAuth客户端ID)并回车
+    Your GOOGLE DRIVE CLIENT ID =>:""" GD_CLIENT_ID
+#判断GD CLIENT ID是否正确(通过判断是不是纯数字)
+# until [[ $YOUR_TELEGRAM_NAME =~ ^-?[0-9]+$ ]]; do
+#     echo -e "$color_yellow★★★ 您的Google账号CLIENT ID输入不正确，请重新输入或按“Ctrl+C”结束安装！ ★★★$color_end"
+#     read -p """请登陆console.cloud.google.com，在“API和服务”-“凭证”-”OAuth 2.0 客户端“下找到你的CLIENT_ID
+#     Your GOOGLE DRIVE CLIENT ID =>:""" GD_CLIENT_ID
+# done
+
+read -p """请输入使用机器人的Google账号CLIENT SECRET(OAuth客户端SECRET)并回车
+    Your GOOGLE DRIVE CLIENT SECRET =>:""" GD_CLIENT_SECRET
+#判断GD CLIENT SECRET是否正确(通过判断是不是纯数字)
+# until [[ $YOUR_TELEGRAM_NAME =~ ^-?[0-9]+$ ]]; do
+#     echo -e "$color_yellow★★★ 您的Google账号CLIENT SECRET输入不正确，请重新输入或按“Ctrl+C”结束安装！ ★★★$color_end"
+#     read -p """请登陆console.cloud.google.com，在“API和服务”-“凭证”-”OAuth 2.0 客户端“下找到你的CLIENT_SECRET
+#     Your GOOGLE DRIVE CLIENT SECRET =>:""" GD_CLIENT_SECRET
+# done
+
 read -p """请输入转存默认目的地团队盘ID(不指定转存目的地默认改地址，脚本强制要求输入团队盘ID)并回车
     Your Google Team Drive ID =>:""" YOUR_GOOGLE_TEAM_DRIVE_ID
 #判断google team drive ID是否正确（团队盘ID长度19位）
@@ -166,6 +184,8 @@ cd ../
     sed -i "s/bot_token/$YOUR_BOT_TOKEN/g" ./gd-utils/config.js &&
     sed -i "s/your_tg_userid/$YOUR_TELEGRAM_ID/g" ./gd-utils/config.js &&
     sed -i "s/your_tg_username/$YOUR_TELEGRAM_NAME/g" ./gd-utils/config.js &&
+    sed -i "s/your_client_id/$GD_CLIENT_ID/g" ./gd-utils/config.js &&
+    sed -i "s/your_client_secret/$GD_CLIENT_SECRET/g" ./gd-utils/config.js &&
     sed -i "s/DEFAULT_TARGET = ''/DEFAULT_TARGET = '$YOUR_GOOGLE_TEAM_DRIVE_ID'/g" ./gd-utils/config.js
 echo -e "$color_yellow----------------------------------------------------------$color_end"
 
