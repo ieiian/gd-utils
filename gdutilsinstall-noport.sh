@@ -181,7 +181,7 @@ pm2 start  index.js --node-args="--max-old-space-size=500"
 echo -e "$color_yellow----------------------------------------------------------$color_end"
 echo -e "$color_yellow-------------------------complete-------------------------$color_end"
 echo -e "$color_yellow----------------------------------------------------------$color_end"
-echo -e "\e[31m ★★★ 如有需要，请打开./gd-utils目录下的\e[0m \e[35mconfig.js\e[0m \e[31m和\e[0m \e[35mserver.js\e[0m \e[31m文件进行补全设置...... \e[0m"
+echo -e "\e[31m ★ 如有需要，请打开./gd-utils目录下的\e[0m \e[35mconfig.js\e[0m \e[31m和\e[0m \e[35mserver.js\e[0m \e[31m文件进行补全设置... \e[0m"
 
 cd ~
 #rm -f gdutilsinstall.sh
