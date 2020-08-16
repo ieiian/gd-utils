@@ -11,11 +11,11 @@ echo -e "$color_yellow 02.$color_end 脚本包括“TD盘VPS上查询转存部�
 echo -e "$color_yellow 03.$color_end 本脚本适应CentOS/Debian/Ubuntu三种操作系统，自动识别、自动选择对应分支一键安装部署"
 echo -e "$color_yellow 04.$color_end 三步即可完成部署：上传脚本到VPS → 设置脚本执行权限 → 运行"
 echo -e "$color_yellow 05.$color_end 准备工作一：在TG上注册好机器人取得并记录下该机器人TOKEN"
-echo -e "$color_yellow 07.$color_end 准备工作三：向机器人@userinfobot获取个人TG账号ID并记录"
-echo -e "$color_yellow 08.$color_end 准备工作四：注册好一个Google team drive加入sa并记录下该盘ID"
+echo -e "$color_yellow 06.$color_end 准备工作二：向机器人@userinfobot获取个人TG账号ID并记录"
+echo -e "$color_yellow 07.$color_end 准备工作三：注册好一个Google team drive加入sa并记录下该盘ID"
 
 echo -e "$color_yellow------------------------------------------------$color_end"
-read -s -n1 -p "★★★ 如已做好以上[5/6/7/8]准备或不需要安装Telegram机器人请按任意键开始部署，如未做好准备请按“Ctrl+c”终止脚本 ★★★"
+read -s -n1 -p "★★★ 如已做好以上[5/6/7]准备请按任意键开始部署，如未做好准备请按“Ctrl+c”终止脚本 ★★★"
 echo -e "\n$color_yellow------------------------------------------------$color_end"
 
 # 识别操作系统
@@ -179,6 +179,9 @@ echo -e "$color_yellow启动守护进程......$color_end"
 cd ./gd-utils
 pm2 start  index.js --node-args="--max-old-space-size=500"
 echo -e "$color_yellow----------------------------------------------------------$color_end"
+echo -e "$color_yellow-------------------------complete-------------------------$color_end"
+echo -e "$color_yellow----------------------------------------------------------$color_end"
+echo -e "\e[31m ★★★ 如有需要，请打开./gd-utils目录下的\e[0m \e[35mconfig.js\e[0m \e[31m和\e[0m \e[35mserver.js\e[0m \e[31m文件进行补全设置...... \e[0m"
 
 cd ~
 #rm -f gdutilsinstall.sh
