@@ -1,6 +1,5 @@
-# Google Drive 百宝箱
+# Google Drive 百宝箱(FORK大佬程序作测试，如有冒犯请与我联系)
 
-> FORK大佬程序作测试，如有冒犯请与我联系(./compare.md)
 > 不只是最快的 google drive 拷贝工具 [与其他工具的对比](./compare.md)
 
 ## 一键安装脚本    
